@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 
 require("./routes/user.routes")(app);
 require("./routes/address.routes")(app);
-// require("./routes/product.routes")(app);
+require("./routes/product.routes")(app);
 // require("./routes/order.routes")(app);
 
 const PORT = 3000;
