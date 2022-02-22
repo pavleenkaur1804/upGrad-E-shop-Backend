@@ -109,11 +109,10 @@ exports.login = (req, res) => {
       const value = bcrypt.compareSync(req.body.password,user.password);
       
       if (value==true) {
-        const user=new User({
-          isLoggedIn:true,
-          isAuthenticated:true,
-          
-        });
+       
+          isLoggedIn=true
+          isAuthenticated=true
+      
         User.findOneAndUpdate(filter,{$set:{user}})
           .then((user) => {
             const token=jwt.sign({_id:user._id},"newkey");
